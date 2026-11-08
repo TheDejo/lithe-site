@@ -222,12 +222,15 @@
     <section class="wrap" aria-labelledby="features">
       <h2 id="features">The test runner you know, with what agents need.</h2>
       <div class="grid reveal">
-        <div><span class="n">01</span><h3>Tests</h3><p><code>describe</code>, <code>test</code> and <code>expect</code>. TypeScript runs as is, with no config.</p></div>
+        <div><span class="n">01</span><h3>Tests</h3><p><code>describe</code>, <code>test</code> and <code>expect</code>. TypeScript runs as is, and <code>--watch</code> re-runs on save.</p></div>
         <div><span class="n">02</span><h3>Mocks</h3><p>Stub the Anthropic or OpenAI client your agent already uses, and check every tool call.</p></div>
         <div><span class="n">03</span><h3>Assertions</h3><p>Check meaning, not wording: parts of a string, a shape of JSON, one of several answers.</p></div>
-        <div><span class="n">04</span><h3>Retries</h3><p>Give real model calls more time and another try, and still see which tests needed it.</p></div>
-        <div><span class="n">05</span><h3>Traces</h3><p>Every model call, tool call and note is recorded, and printed under a failing test.</p></div>
-        <div><span class="n">06</span><h3>Compare</h3><p>Diff two runs and find the first step where an agent did something different.</p></div>
+        <div><span class="n">04</span><h3>Judges</h3><p>Ask a model you choose whether an answer means the right thing, or meets your criteria.</p></div>
+        <div><span class="n">05</span><h3>Record and replay</h3><p>Call the real model once, save what it said, and replay it in CI for free.</p></div>
+        <div><span class="n">06</span><h3>Retries</h3><p>Give real model calls more time and another try, and still see which tests needed it.</p></div>
+        <div><span class="n">07</span><h3>Traces</h3><p>Every model call, tool call and note is recorded, and printed under a failing test.</p></div>
+        <div><span class="n">08</span><h3>Compare</h3><p>Diff two runs and find the first step where an agent did something different.</p></div>
+        <div><span class="n">09</span><h3>Parallel and reports</h3><p>Run files at the same time with <code>--jobs</code>, and send JUnit results to your CI.</p></div>
       </div>
     </section>
 
@@ -286,7 +289,9 @@ Tests: <span class="ok">3 passed</span> (3)</pre>
       <div class="ci reveal">
         <div><h3>GitHub Actions</h3><p>Save a report on every build and compare pull requests against main.<code>npx lithe --report lithe-report.json</code></p></div>
         <div><h3>Anywhere else</h3><p>GitLab, CircleCI, Azure, Jenkins. Lithe exits non-zero when a test fails.<code>npm ci &amp;&amp; npx lithe</code></p></div>
-        <div><h3>Real models</h3><p>More time and a second try for tests that call a live API.<code>npx lithe e2e --timeout 60000 --retries 2</code></p></div>
+        <div><h3>Real models</h3><p>Record real responses once and commit them. CI replays them, with no API key and no cost.<code>npx lithe --record</code></p></div>
+        <div><h3>Dashboards</h3><p>A JUnit report for GitLab, Jenkins, CircleCI or Azure, with traces on failing tests.<code>npx lithe --junit junit.xml</code></p></div>
+        <div><h3>Faster runs</h3><p>Run test files in parallel. Output stays grouped by file, and reports cover them all.<code>npx lithe --jobs auto</code></p></div>
       </div>
     </section>
 
